@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface CampagneDao extends JpaRepository<Campagne, Long> {
@@ -17,5 +18,6 @@ public interface CampagneDao extends JpaRepository<Campagne, Long> {
     int deleteByDateDebut(Date dateDebut);
 
     int deleteByDateFin(Date dateFin);
+
 
 }

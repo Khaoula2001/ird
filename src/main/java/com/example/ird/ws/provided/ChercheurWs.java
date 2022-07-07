@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/chercheur")
+@RequestMapping("/api/v1/chercheur")
 public class ChercheurWs {
     @Autowired
     private ChercheurService chercheurService;
 
+//    http://localhost:8034/api/v1/chercheur/login/{login}
 
     @GetMapping("/login/{login}")
     public Chercheur findByLogin(@PathVariable String login) {
