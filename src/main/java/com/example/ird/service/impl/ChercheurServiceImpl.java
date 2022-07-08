@@ -25,7 +25,6 @@ public class ChercheurServiceImpl implements ChercheurService {
         return chercheurDao.findByLogin(login);
     }
 
-
     @Override
     public List<Chercheur> findByPrenom(String prenom) {
         return chercheurDao.findByPrenom(prenom);
