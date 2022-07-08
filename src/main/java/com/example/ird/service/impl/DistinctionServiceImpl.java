@@ -34,11 +34,7 @@ public class DistinctionServiceImpl implements DistinctionService {
 
     @Override
     public Distinction save(Distinction distinction) {
-
-
         return distinctionDao.save(distinction);
-
-
     }
 
     public List<Distinction> findAll() {

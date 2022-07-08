@@ -3,9 +3,9 @@ package com.example.ird.service.impl;
 import com.example.ird.bean.Chercheur;
 import com.example.ird.bean.Expertise;
 import com.example.ird.dao.ExpertiseDao;
-import com.example.ird.service.fasade.CampagneService;
-import com.example.ird.service.fasade.ChercheurService;
-import com.example.ird.service.fasade.ExpertiseService;
+import com.example.ird.service.facade.CampagneService;
+import com.example.ird.service.facade.ChercheurService;
+import com.example.ird.service.facade.ExpertiseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

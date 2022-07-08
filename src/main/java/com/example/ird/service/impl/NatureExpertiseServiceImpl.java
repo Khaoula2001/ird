@@ -2,7 +2,7 @@ package com.example.ird.service.impl;
 
 import com.example.ird.bean.NatureExpertise;
 import com.example.ird.dao.NatureExpertiseDao;
-import com.example.ird.service.fasade.NatureExpertiseService;
+import com.example.ird.service.facade.NatureExpertiseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

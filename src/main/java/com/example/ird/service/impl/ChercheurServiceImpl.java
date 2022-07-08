@@ -55,11 +55,10 @@ public class ChercheurServiceImpl implements ChercheurService {
     @Override
     @Transactional
     public Chercheur save(Chercheur chercheur) {
-
         return chercheurDao.save(chercheur);
-
     }
-@Override
+
+    @Override
     public List<Chercheur> findAll() {
         return chercheurDao.findAll();
     }
