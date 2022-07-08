@@ -3,7 +3,7 @@ package com.example.ird.service.impl;
 
 import com.example.ird.bean.Enseignement;
 import com.example.ird.dao.EnseignementDao;
-import com.example.ird.service.fasade.EnseignementService;
+import com.example.ird.service.facade.EnseignementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

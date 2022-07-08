@@ -2,7 +2,7 @@ package com.example.ird.service.impl;
 
 import com.example.ird.bean.Distinction;
 import com.example.ird.dao.DistinctionDao;
-import com.example.ird.service.fasade.DistinctionService;
+import com.example.ird.service.facade.DistinctionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

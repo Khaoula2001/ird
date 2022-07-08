@@ -14,7 +14,6 @@ public interface DistinctionDao extends JpaRepository<Distinction, Long> {
 
     Distinction findByDescription(String description);
 
-
     List<Distinction> findByChercheurEmail(String email);
 
     List<Distinction> findByCampagneDateDebut(Date dateDebut);

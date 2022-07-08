@@ -2,7 +2,7 @@ package com.example.ird.ws.provided;
 
 
 import com.example.ird.bean.TypeDistinction;
-import com.example.ird.service.fasade.TypeDistinctionService;
+import com.example.ird.service.facade.TypeDistinctionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

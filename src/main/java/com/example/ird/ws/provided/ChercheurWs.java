@@ -2,7 +2,7 @@ package com.example.ird.ws.provided;
 
 
 import com.example.ird.bean.Chercheur;
-import com.example.ird.service.fasade.ChercheurService;
+import com.example.ird.service.facade.ChercheurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

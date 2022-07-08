@@ -2,7 +2,7 @@ package com.example.ird.service.impl;
 
 import com.example.ird.bean.TypeFormationContinue;
 import com.example.ird.dao.TypeFormationContinueDao;
-import com.example.ird.service.fasade.TypeFormationContinueService;
+import com.example.ird.service.facade.TypeFormationContinueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
