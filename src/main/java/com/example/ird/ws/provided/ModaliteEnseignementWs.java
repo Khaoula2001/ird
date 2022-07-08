@@ -2,7 +2,7 @@ package com.example.ird.ws.provided;
 
 
 import com.example.ird.bean.ModaliteEnseignement;
-import com.example.ird.service.fasade.ModaliteEnseignementService;
+import com.example.ird.service.facade.ModaliteEnseignementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

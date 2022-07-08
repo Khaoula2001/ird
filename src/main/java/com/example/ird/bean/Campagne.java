@@ -1,6 +1,8 @@
 
 package com.example.ird.bean;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -12,10 +14,21 @@ public class Campagne {
     private Long id;
     private Date dateDebut;
     private Date dateFin;
+    @ManyToOne
+    private EtatCampagne etatCampagne;
     @OneToMany(mappedBy = "campagne")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<CampagneChercheurOuverture> campagneChercheurOuvertureList;
 
     public Campagne() {
+    }
+
+    public EtatCampagne getEtatCampagne() {
+        return etatCampagne;
+    }
+
+    public void setEtatCampagne(EtatCampagne etatCampagne) {
+        this.etatCampagne = etatCampagne;
     }
 
     public Long getId() {

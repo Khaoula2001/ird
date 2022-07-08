@@ -4,7 +4,8 @@ package com.example.ird.service.impl;
 import com.example.ird.bean.CampagneChercheurOuverture;
 import com.example.ird.bean.Chercheur;
 import com.example.ird.dao.CampagneChercheurOuvertureDao;
-import com.example.ird.service.fasade.CampagneChercheurOuvertureService;
+import com.example.ird.service.facade.CampagneChercheurOuvertureService;
+import com.example.ird.service.facade.ChercheurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,9 +17,14 @@ import java.util.List;
 public class CampagneChercheurOuvertureServiceImpl implements CampagneChercheurOuvertureService {
     @Autowired
     private CampagneChercheurOuvertureDao campagneChercheurOuvertureDao;
+    @Autowired
+
+    private ChercheurService chercheurService;
+
 
     @Override
     public CampagneChercheurOuverture save(CampagneChercheurOuverture campagneChercheurOuverture) {
+        campagneChercheurOuverture.setChercheur(chercheurService.findByEmail(campagneChercheurOuverture.getChercheur().getEmail()));
         return campagneChercheurOuvertureDao.save(campagneChercheurOuverture);
 
     }

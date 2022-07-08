@@ -3,7 +3,7 @@ package com.example.ird.service.impl;
 
 import com.example.ird.bean.Chercheur;
 import com.example.ird.dao.ChercheurDao;
-import com.example.ird.service.fasade.ChercheurService;
+import com.example.ird.service.facade.ChercheurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +14,11 @@ import java.util.List;
 public class ChercheurServiceImpl implements ChercheurService {
     @Autowired
     private ChercheurDao chercheurDao;
+
+    @Override
+    public Chercheur findByEmail(String email) {
+        return chercheurDao.findByEmail(email);
+    }
 
     @Override
     public Chercheur findByLogin(String login) {
@@ -52,10 +57,10 @@ public class ChercheurServiceImpl implements ChercheurService {
     @Transactional
     public Chercheur save(Chercheur chercheur) {
 
-      return  chercheurDao.save(chercheur);
+        return chercheurDao.save(chercheur);
 
     }
-
+@Override
     public List<Chercheur> findAll() {
         return chercheurDao.findAll();
     }
