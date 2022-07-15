@@ -3,6 +3,7 @@ package com.example.ird.dao;
 import com.example.ird.bean.Distinction;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.Date;
@@ -19,5 +20,8 @@ public interface DistinctionDao extends JpaRepository<Distinction, Long> {
     List<Distinction> findByCampagneDateDebut(Date dateDebut);
 
     int deleteByLibelle(String libelle);
+
+    @Query("select Sum(d.dureeEstime) from Distinction d where d.chercheur.id =: chercheurId and d.campagne.id =: campagneId")
+    double findSumDureeEstimeByChercheurIdAndCampagneId(Long checheurId , Long campagneId);
 
 }

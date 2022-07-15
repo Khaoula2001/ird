@@ -13,4 +13,7 @@ public interface DistinctionService {
     int deleteByLibelle(String libelle);
 
     Distinction save(Distinction distinction);
+
+    double findSumDureeEstimeByChercheurIdAndCampagneId(Long checheurId , Long campagneId);
+
 }

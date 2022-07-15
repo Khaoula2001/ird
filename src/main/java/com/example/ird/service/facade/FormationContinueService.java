@@ -22,4 +22,7 @@ public interface FormationContinueService {
 
     @Transactional
     int deleteByDescription(String description);
+
+    double findSumDureeEstimeByChercheurIdAndCampagneId(Long checheurId , Long campagneId);
+
 }

@@ -4,6 +4,7 @@ import com.example.ird.bean.Distinction;
 import com.example.ird.dao.DistinctionDao;
 import com.example.ird.service.facade.DistinctionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -39,5 +40,10 @@ public class DistinctionServiceImpl implements DistinctionService {
 
     public List<Distinction> findAll() {
         return distinctionDao.findAll();
+    }
+
+    @Override
+    public double findSumDureeEstimeByChercheurIdAndCampagneId(Long checheurId, Long campagneId) {
+        return distinctionDao.findSumDureeEstimeByChercheurIdAndCampagneId(checheurId, campagneId);
     }
 }
