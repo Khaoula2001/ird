@@ -22,4 +22,6 @@ public interface EnseignementService {
 
     @Transactional
     int deleteByDescription(String description);
+
+    double findSumDureeEstimeByChercheurIdAndCampagneId(Long checheurId , Long campagneId);
 }

@@ -5,6 +5,7 @@ import com.example.ird.bean.Enseignement;
 import com.example.ird.dao.EnseignementDao;
 import com.example.ird.service.facade.EnseignementService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -56,5 +57,10 @@ public class EnseignementServiceImpl implements EnseignementService {
 
     public List<Enseignement> findAll() {
         return enseignementDao.findAll();
+    }
+
+    @Override
+    public double findSumDureeEstimeByChercheurIdAndCampagneId(Long checheurId, Long campagneId) {
+        return enseignementDao.findSumDureeEstimeByChercheurIdAndCampagneId(checheurId, campagneId);
     }
 }
