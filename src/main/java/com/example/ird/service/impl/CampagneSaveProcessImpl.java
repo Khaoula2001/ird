@@ -6,6 +6,7 @@ import com.example.ird.bean.Chercheur;
 import com.example.ird.bean.EtatCampagne;
 import com.example.ird.dao.CampagneDao;
 import com.example.ird.service.facade.CampagneChercheurOuvertureService;
+import com.example.ird.service.facade.CampagneSaveProcess;
 import com.example.ird.service.facade.ChercheurService;
 import com.example.ird.service.facade.EtatCampagneService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CampagneSaveProcessImpl  {
+public class CampagneSaveProcessImpl  implements CampagneSaveProcess {
 
+    @Override
     public int Exec(Campagne campagne) {
         prepareSave(campagne);
         int resultat = validateSave(campagne);
@@ -66,22 +68,18 @@ public class CampagneSaveProcessImpl  {
     }
 
 
-    public List<Campagne> findByEtatCampagneCode(String code) {
+    @Override
+    public Campagne findByEtatCampagneCode(String code) {
         return campagneDao.findByEtatCampagneCode(code);
     }
 
 
     @Autowired
-
     private CampagneDao campagneDao;
     @Autowired
-
     private EtatCampagneService etatCampagneService;
     @Autowired
     private ChercheurService chercheurService;
     @Autowired
-
     private CampagneChercheurOuvertureService campagneChercheurOuvertureService;
-
-
 }

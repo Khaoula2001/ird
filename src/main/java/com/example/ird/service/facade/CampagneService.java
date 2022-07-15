@@ -18,4 +18,8 @@ public interface CampagneService {
 
     @Transactional
     int deleteByDateFin(Date dateFin);
+
+    Campagne findByEtatCampagneCode(String code);
+
+    List<Campagne> findAll();
 }

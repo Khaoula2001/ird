@@ -15,6 +15,12 @@ public class NatureExpertiseWs {
         return natureExpertiseService.save(natureexpertise);
     }
 
+    @PutMapping("/update/{code}")
+    public int update(@PathVariable String code, @RequestBody NatureExpertise natureExpertise) {
+        return natureExpertiseService.update(code, natureExpertise);
+    }
+
+
     @GetMapping("/findAll")
     public List<NatureExpertise> findAll() {
         return natureExpertiseService.findAll();

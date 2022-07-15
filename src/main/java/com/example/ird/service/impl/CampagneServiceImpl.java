@@ -3,9 +3,7 @@ package com.example.ird.service.impl;
 
 import com.example.ird.bean.Campagne;
 import com.example.ird.dao.CampagneDao;
-import com.example.ird.service.facade.CampagneChercheurOuvertureService;
 import com.example.ird.service.facade.CampagneService;
-import com.example.ird.service.facade.ChercheurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -45,6 +43,13 @@ public class CampagneServiceImpl implements CampagneService {
         return campagneDao.deleteByDateFin(dateFin);
     }
 
+    @Override
+    public Campagne findByEtatCampagneCode(String code) {
+        return campagneDao.findByEtatCampagneCode(code);
+    }
+
+
+    @Override
     public List<Campagne> findAll() {
         return campagneDao.findAll();
     }

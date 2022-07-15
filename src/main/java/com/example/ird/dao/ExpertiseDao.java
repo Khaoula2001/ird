@@ -10,6 +10,5 @@ import java.util.List;
 public interface ExpertiseDao extends JpaRepository<Expertise, Long> {
 
     List<Expertise> findAll();
-    Expertise findByCampagneEtatCampagneCode(String code);
 
 }

@@ -1,8 +1,12 @@
 package com.example.ird.service.impl;
 
 import com.example.ird.bean.ConseilScientifique;
+import com.example.ird.bean.Expertise;
+import com.example.ird.bean.NatureExpertise;
 import com.example.ird.dao.ConseilScientifiqueDao;
 import com.example.ird.service.facade.ConseilScientifiqueService;
+import com.example.ird.service.facade.ExpertiseService;
+import com.example.ird.service.facade.NatureExpertiseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,18 +17,20 @@ public class ConseilScientifiqueServiceImpl implements ConseilScientifiqueServic
 
     // beg save
     @Override
-    public int save(ConseilScientifique natureexpertise) {
-        prepare(natureexpertise);
-        int validate = validate(natureexpertise);
+    public int save(ConseilScientifique conseilScientifique) {
+        prepare(conseilScientifique);
+        int validate = validate(conseilScientifique);
         if (validate < 0) {
             return validate;
         } else {
-            handlprocess(natureexpertise);
+            handlprocess(conseilScientifique);
             return validate;
         }
     }
 
-    private void prepare(ConseilScientifique natureexpertise) {
+    private void prepare(ConseilScientifique conseilScientifique) {
+        NatureExpertise natureExpertise = natureExpertiseService.findByCode(conseilScientifique.getNatureExpertise().getCode());
+        conseilScientifique.setNatureExpertise(natureExpertise);
     }
 
     private int validate(ConseilScientifique natureexpertise) {
@@ -41,6 +47,14 @@ public class ConseilScientifiqueServiceImpl implements ConseilScientifiqueServic
         return conseilScientifiqueDao.findAll();
     }
 
+    public ConseilScientifique findByNatureExpertise(NatureExpertise natureExpertise) {
+        return conseilScientifiqueDao.findByNatureExpertise(natureExpertise);
+    }
+
     @Autowired
     private ConseilScientifiqueDao conseilScientifiqueDao;
+    @Autowired
+    private NatureExpertiseService natureExpertiseService;
+    @Autowired
+    private ExpertiseService expertiseService;
 }
