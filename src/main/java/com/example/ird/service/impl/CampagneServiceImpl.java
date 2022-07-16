@@ -39,6 +39,11 @@ public class CampagneServiceImpl implements CampagneService {
     }
 
     @Override
+    public List<Campagne> findByEtatCampagneCode(String code) {
+        return campagneDao.findByEtatCampagneCode(code);
+    }
+
+    @Override
     public List<Campagne> findByDateFin(Date dateFin) {
         return campagneDao.findByDateFin(dateFin);
     }

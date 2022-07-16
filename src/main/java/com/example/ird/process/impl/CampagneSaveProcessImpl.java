@@ -1,4 +1,4 @@
-package com.example.ird.service.impl;
+package com.example.ird.process.impl;
 
 import com.example.ird.bean.Campagne;
 import com.example.ird.bean.CampagneChercheurOuverture;

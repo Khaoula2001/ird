@@ -2,7 +2,7 @@ package com.example.ird.service.impl;
 
 import com.example.ird.bean.ConseilScientifique;
 import com.example.ird.dao.ConseilScientifiqueDao;
-import com.example.ird.service.fasade.ConseilScientifiqueService;
+import com.example.ird.service.facade.ConseilScientifiqueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

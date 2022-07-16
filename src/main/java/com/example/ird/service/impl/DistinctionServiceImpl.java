@@ -3,6 +3,7 @@ package com.example.ird.service.impl;
 import com.example.ird.bean.Distinction;
 import com.example.ird.dao.DistinctionDao;
 import com.example.ird.service.facade.DistinctionService;
+import com.example.ird.service.vo.StatistiqueFormulaireVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,16 @@ public class DistinctionServiceImpl implements DistinctionService {
 
     @Autowired
     private DistinctionDao distinctionDao;
+
+    @Override
+    public double sumDistiction(Long chercheurId, Long campagneId) {
+        return 0;
+    }
+
+    @Override
+    public StatistiqueFormulaireVo pourcentageDistinction(Long chercheurId, Long campagneId) {
+        return null;
+    }
 
     @Override
     public Distinction findByLibelle(String libelle) {
@@ -30,6 +41,11 @@ public class DistinctionServiceImpl implements DistinctionService {
     @Transactional
     public int deleteByLibelle(String libelle) {
         return distinctionDao.deleteByLibelle(libelle);
+    }
+
+    @Override
+    public double findSumDureeEstimeByChercheurIdAndCampagneId(Long checheurId, Long campagneId) {
+        return 0;
     }
 
     @Override

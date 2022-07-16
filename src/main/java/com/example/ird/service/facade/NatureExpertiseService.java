@@ -1,4 +1,4 @@
-package com.example.ird.service.fasade;
+package com.example.ird.service.facade;
 
 import com.example.ird.bean.Expertise;
 import com.example.ird.bean.NatureExpertise;
@@ -10,5 +10,8 @@ public interface NatureExpertiseService {
     int deleteByCode(String code);
     NatureExpertise findByCode(String code);
     List<NatureExpertise> findAll();
+
+    int update(String code, NatureExpertise natureExpertise);
+
 }
 

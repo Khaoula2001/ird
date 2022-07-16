@@ -30,8 +30,4 @@ public interface EnseignementDao extends JpaRepository<Enseignement, Long> {
     @Query("select Sum(e.dureeEstime) from Distinction e where e.chercheur.id =: chercheurId and e.campagne.id =: campagneId")
     double findSumDureeEstimeByChercheurIdAndCampagneId(Long checheurId , Long campagneId);
 
-    @Query("SELECT SUM(e.dureeEstime) FROM Enseignement e WHERE e.chercheur.id =:chercheurId AND e.campagne.id=:campagneId")
-    double findSumDureeEstimeByChercheurIdAndCampagneId(Long chercheurId, Long campagneId);
-
-
 }
