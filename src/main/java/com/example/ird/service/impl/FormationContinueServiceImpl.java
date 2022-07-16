@@ -8,6 +8,7 @@ import com.example.ird.service.facade.EnseignementService;
 import com.example.ird.service.facade.FormationContinueService;
 import com.example.ird.service.vo.StatistiqueFormulaireVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -85,5 +86,10 @@ public class FormationContinueServiceImpl implements FormationContinueService {
 
     public List<FormationContinue> findAll() {
         return formationContinueDao.findAll();
+    }
+
+    @Override
+    public double findSumDureeEstimeByChercheurIdAndCampagneId(Long checheurId, Long campagneId) {
+        return formationContinueDao.findSumDureeEstimeByChercheurIdAndCampagneId(checheurId, campagneId);
     }
 }

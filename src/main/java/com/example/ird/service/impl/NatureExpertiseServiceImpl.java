@@ -45,6 +45,18 @@ public class NatureExpertiseServiceImpl implements NatureExpertiseService {
     }
 
     @Override
+    public int update(String code, NatureExpertise natureExpertise) {
+        if (findByCode(code) != null){
+            natureExpertise.setCode(code);
+            natureExpertiseDao.save(natureExpertise);
+            return 1;
+        }
+        else{
+            return -1;
+        }
+    }
+
+    @Override
     public NatureExpertise findByCode(String code) {
         return natureExpertiseDao.findByCode(code);
     }
@@ -54,6 +66,8 @@ public class NatureExpertiseServiceImpl implements NatureExpertiseService {
     public int deleteByCode(String code) {
         return natureExpertiseDao.deleteByCode(code);
     }
+
+
 
     @Autowired
     private NatureExpertiseDao natureExpertiseDao;

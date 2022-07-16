@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EtatCampagneDao extends JpaRepository<EtatCampagne, Long> {
     EtatCampagne findByCode(String code);
-
     int deleteByCode(String code);
 
 }

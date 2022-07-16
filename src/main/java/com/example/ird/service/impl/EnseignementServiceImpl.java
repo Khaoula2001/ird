@@ -8,6 +8,7 @@ import com.example.ird.service.facade.EnseignementService;
 import com.example.ird.service.facade.FormationContinueService;
 import com.example.ird.service.vo.StatistiqueFormulaireVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -80,5 +81,10 @@ public class EnseignementServiceImpl implements EnseignementService {
 
     public List<Enseignement> findAll() {
         return enseignementDao.findAll();
+    }
+
+    @Override
+    public double findSumDureeEstimeByChercheurIdAndCampagneId(Long checheurId, Long campagneId) {
+        return enseignementDao.findSumDureeEstimeByChercheurIdAndCampagneId(checheurId, campagneId);
     }
 }

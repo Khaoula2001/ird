@@ -27,4 +27,8 @@ public interface FormationContinueDao extends JpaRepository<FormationContinue, L
     int deleteByDureeEstime(double dureeEstime);
 
     int deleteByDescription(String description);
+
+    @Query("select Sum(f.dureeEstime) from Distinction f where f.chercheur.id =: chercheurId and f.campagne.id =: campagneId")
+    double findSumDureeEstimeByChercheurIdAndCampagneId(Long checheurId , Long campagneId);
+
 }

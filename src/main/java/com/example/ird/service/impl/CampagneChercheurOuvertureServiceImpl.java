@@ -18,7 +18,6 @@ public class CampagneChercheurOuvertureServiceImpl implements CampagneChercheurO
     @Autowired
     private CampagneChercheurOuvertureDao campagneChercheurOuvertureDao;
     @Autowired
-
     private ChercheurService chercheurService;
 
 
@@ -95,6 +94,7 @@ public class CampagneChercheurOuvertureServiceImpl implements CampagneChercheurO
         return campagneChercheurOuvertureDao.deleteByChercheurEmail(email);
     }
 
+    @Override
     public List<CampagneChercheurOuverture> findAll() {
         return campagneChercheurOuvertureDao.findAll();
     }
