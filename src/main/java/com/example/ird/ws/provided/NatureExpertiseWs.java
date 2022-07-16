@@ -1,7 +1,7 @@
 package com.example.ird.ws.provided;
 
 import com.example.ird.bean.NatureExpertise;
-import com.example.ird.service.fasade.NatureExpertiseService;
+import com.example.ird.service.facade.NatureExpertiseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,6 +24,7 @@ public class NatureExpertiseWs {
     public NatureExpertise findByCode(@PathVariable String code) {
         return natureExpertiseService.findByCode(code);
     }
+
     @DeleteMapping("/delete/{code}")
     public int deleteByCode(@PathVariable String code) {
         return natureExpertiseService.deleteByCode(code);

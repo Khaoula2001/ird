@@ -16,7 +16,7 @@ public class Chercheur {
     private String nom;
     private String email;
 
-   /* @OneToMany(mappedBy = "chercheur")
+    @OneToMany(mappedBy = "chercheur")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Distinction> distinctions;
     @OneToMany(mappedBy = "chercheur")
@@ -25,36 +25,36 @@ public class Chercheur {
     @OneToMany(mappedBy = "chercheur")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Enseignement> enseignements;
-*/
+
 
     public Chercheur() {
     }
 
-    /*  public List<FormationContinue> getFormationContinues() {
-          return formationContinues;
-      }
+    public List<FormationContinue> getFormationContinues() {
+        return formationContinues;
+    }
 
-      public void setFormationContinues(List<FormationContinue> formationContinues) {
-          this.formationContinues = formationContinues;
-      }
+    public void setFormationContinues(List<FormationContinue> formationContinues) {
+        this.formationContinues = formationContinues;
+    }
 
-      public List<Enseignement> getEnseignements() {
-          return enseignements;
-      }
+    public List<Enseignement> getEnseignements() {
+        return enseignements;
+    }
 
-      public void setEnseignements(List<Enseignement> enseignements) {
-          this.enseignements = enseignements;
-      }
+    public void setEnseignements(List<Enseignement> enseignements) {
+        this.enseignements = enseignements;
+    }
 
 
-      public List<Distinction> getDistinctions() {
-          return distinctions;
-      }
+    public List<Distinction> getDistinctions() {
+        return distinctions;
+    }
 
-      public void setDistinctions(List<Distinction> distinctions) {
-          this.distinctions = distinctions;
-      }
-     */
+    public void setDistinctions(List<Distinction> distinctions) {
+        this.distinctions = distinctions;
+    }
+
     public String getEmail() {
         return email;
     }

@@ -1,4 +1,4 @@
-package com.example.ird.service.impl;
+package com.example.ird.process.impl;
 
 import com.example.ird.bean.Campagne;
 import com.example.ird.bean.CampagneChercheurOuverture;
@@ -6,6 +6,7 @@ import com.example.ird.bean.Chercheur;
 import com.example.ird.bean.EtatCampagne;
 import com.example.ird.dao.CampagneDao;
 import com.example.ird.service.facade.CampagneChercheurOuvertureService;
+import com.example.ird.process.facade.CampagneSaveProcessService;
 import com.example.ird.service.facade.ChercheurService;
 import com.example.ird.service.facade.EtatCampagneService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CampagneSaveProcessImpl  {
-    public int Exec(Campagne campagne) {
+public class CampagneSaveProcessImpl implements CampagneSaveProcessService {
+    @Override
+    public int ExecSave(Campagne campagne) {
         prepareSave(campagne);
         int resultat = validateSave(campagne);
         if (resultat > 0) {

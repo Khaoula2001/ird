@@ -20,9 +20,9 @@ public class Expertise {
     @ManyToOne
     private Chercheur chercheur;
     @ManyToOne
-    private Campagne campagne ;
+    private Campagne campagne;
 
-//    Getters && Setters
+    //    Getters && Setters
     public String getLibelle() {
         return libelle;
     }

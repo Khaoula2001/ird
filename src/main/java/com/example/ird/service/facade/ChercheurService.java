@@ -1,18 +1,13 @@
-package com.example.ird.dao;
-
+package com.example.ird.service.facade;
 
 import com.example.ird.bean.Chercheur;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Repository
-public interface ChercheurDao extends JpaRepository<Chercheur, Long> {
+@Service
+public interface ChercheurService {
     Chercheur findByLogin(String login);
-
-    Chercheur findByEmail(String email);
-
 
     List<Chercheur> findByPrenom(String prenom);
 
@@ -23,4 +18,10 @@ public interface ChercheurDao extends JpaRepository<Chercheur, Long> {
     int deleteByPrenom(String prenom);
 
     int deleteByNom(String nom);
+
+    Chercheur save(Chercheur chercheur);
+
+    Chercheur findByEmail(String email);
+
+    List<Chercheur> findAll();
 }

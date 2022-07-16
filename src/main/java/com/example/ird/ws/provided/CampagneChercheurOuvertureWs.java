@@ -4,68 +4,101 @@ package com.example.ird.ws.provided;
 import com.example.ird.bean.CampagneChercheurOuverture;
 import com.example.ird.bean.Chercheur;
 import com.example.ird.service.facade.CampagneChercheurOuvertureService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.Date;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/campagneChercheurOuverture")
+
 public class CampagneChercheurOuvertureWs {
     @Autowired
     private CampagneChercheurOuvertureService campagneChercheurOuvertureService;
 
-    public List<CampagneChercheurOuverture> findByCampagneDateDebut(Date dateDebut) {
+    @GetMapping("/dateDebut/{dateDebut}")
+
+    public List<CampagneChercheurOuverture> findByCampagneDateDebut(@PathVariable Date dateDebut) {
         return campagneChercheurOuvertureService.findByCampagneDateDebut(dateDebut);
     }
 
-    public List<CampagneChercheurOuverture> findByCampagneDateFin(Date dateFin) {
+    @GetMapping("/dateFin/{dateFin}")
+
+
+    public List<CampagneChercheurOuverture> findByCampagneDateFin(@PathVariable Date dateFin) {
         return campagneChercheurOuvertureService.findByCampagneDateFin(dateFin);
     }
 
-    public int deleteByCampagneDateDebut(Date dateDebut) {
+    @DeleteMapping("/dateDebut/{dateDebut}")
+    @Transactional
+    public int deleteByCampagneDateDebut(@PathVariable Date dateDebut) {
         return campagneChercheurOuvertureService.deleteByCampagneDateDebut(dateDebut);
     }
 
-    public int deleteByCampagneDateFin(Date dateFin) {
+    @DeleteMapping("/dateFin/{dateFin}")
+    @Transactional
+
+    public int deleteByCampagneDateFin(@PathVariable Date dateFin) {
         return campagneChercheurOuvertureService.deleteByCampagneDateFin(dateFin);
     }
 
-    public Chercheur findByChercheurLogin(String login) {
+    @GetMapping("/login/{login}")
+
+    public Chercheur findByChercheurLogin(@PathVariable String login) {
         return campagneChercheurOuvertureService.findByChercheurLogin(login);
     }
 
-    public Chercheur findByChercheurNom(String nom) {
+    @GetMapping("/nom/{nom}")
+
+    public Chercheur findByChercheurNom(@PathVariable String nom) {
         return campagneChercheurOuvertureService.findByChercheurNom(nom);
     }
 
-    public Chercheur findByChercheurPrenom(String prenom) {
+    @GetMapping("/prenom/{prenom}")
+
+    public Chercheur findByChercheurPrenom(@PathVariable String prenom) {
         return campagneChercheurOuvertureService.findByChercheurPrenom(prenom);
     }
 
-    public Chercheur findByChercheurEmail(String email) {
+    @GetMapping("/email/{email}")
+
+    public Chercheur findByChercheurEmail(@PathVariable String email) {
         return campagneChercheurOuvertureService.findByChercheurEmail(email);
     }
 
-    public int deleteByChercheurLogin(String login) {
+    @DeleteMapping("/login/{login}")
+    @Transactional
+
+    public int deleteByChercheurLogin(@PathVariable String login) {
         return campagneChercheurOuvertureService.deleteByChercheurLogin(login);
     }
 
-    public int deleteByChercheurNom(String nom) {
+    @DeleteMapping("/nom/{nom}")
+    @Transactional
+
+    public int deleteByChercheurNom(@PathVariable String nom) {
         return campagneChercheurOuvertureService.deleteByChercheurNom(nom);
     }
 
-    public int deleteByChercheurPrenom(String prenom) {
+    @DeleteMapping("/prenom/{prenom}")
+    @Transactional
+
+    public int deleteByChercheurPrenom(@PathVariable String prenom) {
         return campagneChercheurOuvertureService.deleteByChercheurPrenom(prenom);
     }
 
-    public int deleteByChercheurEmail(String email) {
+    @DeleteMapping("/email/{email}")
+    @Transactional
+    public int deleteByChercheurEmail(@PathVariable String email) {
         return campagneChercheurOuvertureService.deleteByChercheurEmail(email);
     }
 
-    public CampagneChercheurOuverture save(CampagneChercheurOuverture campagneChercheurOuverture) {
+    @PostMapping("/")
+
+    public CampagneChercheurOuverture save(@RequestBody CampagneChercheurOuverture campagneChercheurOuverture) {
         return campagneChercheurOuvertureService.save(campagneChercheurOuverture);
     }
 }

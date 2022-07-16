@@ -1,7 +1,7 @@
 package com.example.ird.ws.provided;
 
 import com.example.ird.bean.Expertise;
-import com.example.ird.service.fasade.ExpertiseService;
+import com.example.ird.service.facade.ExpertiseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

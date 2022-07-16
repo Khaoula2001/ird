@@ -12,6 +12,7 @@ import java.util.Optional;
 @Repository
 public interface CampagneDao extends JpaRepository<Campagne, Long> {
     List<Campagne> findByDateDebut(Date dateDebut);
+
     List<Campagne> findByEtatCampagneCode(String code);
 
 

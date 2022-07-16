@@ -10,6 +10,7 @@ import java.util.List;
 @Repository
 public interface NatureExpertiseDao extends JpaRepository<NatureExpertise, Long> {
     int deleteByCode(String code);
+
     List<NatureExpertise> findAll();
 
     NatureExpertise findByCode(String code);
