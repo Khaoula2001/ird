@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface CampagneService {
     Campagne save(Campagne campagne);
-
+    Campagne findByEtatCampagneCode(String code);
     List<Campagne> findByDateDebut(Date dateDebut);
 
     List<Campagne> findByDateFin(Date dateFin);

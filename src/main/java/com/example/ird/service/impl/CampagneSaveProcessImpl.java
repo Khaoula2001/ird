@@ -66,9 +66,6 @@ public class CampagneSaveProcessImpl  {
     }
 
 
-    public List<Campagne> findByEtatCampagneCode(String code) {
-        return campagneDao.findByEtatCampagneCode(code);
-    }
 
 
     @Autowired

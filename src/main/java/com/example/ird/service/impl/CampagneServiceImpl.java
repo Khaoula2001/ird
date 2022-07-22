@@ -48,4 +48,8 @@ public class CampagneServiceImpl implements CampagneService {
     public List<Campagne> findAll() {
         return campagneDao.findAll();
     }
+    @Override
+    public Campagne findByEtatCampagneCode(String code) {
+        return campagneDao.findByEtatCampagneCode(code);
+    }
 }
