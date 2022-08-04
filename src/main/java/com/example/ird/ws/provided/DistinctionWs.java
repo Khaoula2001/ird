@@ -13,24 +13,24 @@ public class DistinctionWs {
     private DistinctionService distinctionService;
 
     @GetMapping("/libelle/{libelle}")
-    public Distinction findByLibelle(String libelle) {
+    public Distinction findByLibelle(@PathVariable String libelle) {
         return distinctionService.findByLibelle(libelle);
     }
 
     @GetMapping("/description/{description}")
 
-    public Distinction findByDescription(String description) {
+    public Distinction findByDescription(@PathVariable String description) {
         return distinctionService.findByDescription(description);
     }
 
 
     @DeleteMapping("/libelle/{libelle}")
-    public int deleteByLibelle(String libelle) {
+    public int deleteByLibelle(@PathVariable String libelle) {
         return distinctionService.deleteByLibelle(libelle);
     }
 
     @PostMapping("/")
-    public Distinction save(Distinction distinction) {
+    public Distinction save(@RequestBody Distinction distinction) {
         return distinctionService.save(distinction);
     }
 }

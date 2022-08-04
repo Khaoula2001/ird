@@ -4,8 +4,9 @@ package com.example.ird.ws.provided;
 import com.example.ird.bean.TypeDistinction;
 import com.example.ird.service.facade.TypeDistinctionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.transaction.Transactional;
 
 @RestController
 @RequestMapping("/api/v1/typeDistinction")
@@ -13,23 +14,33 @@ public class TypeDistinctionWs {
     @Autowired
     private TypeDistinctionService typeDistinctionService;
 
-    public TypeDistinction findByCode(String code) {
+    @GetMapping("/code/{code}")
+
+    public TypeDistinction findByCode(@PathVariable String code) {
         return typeDistinctionService.findByCode(code);
     }
 
-    public TypeDistinction findByLibelle(String libelle) {
+    @GetMapping("/libelle/{libelle}")
+
+    public TypeDistinction findByLibelle(@PathVariable String libelle) {
         return typeDistinctionService.findByLibelle(libelle);
     }
 
-    public int deleteByCode(String code) {
+    @DeleteMapping("/code/{code}")
+    @Transactional
+    public int deleteByCode(@PathVariable String code) {
         return typeDistinctionService.deleteByCode(code);
     }
 
-    public int deleteByLibelle(String Libelle) {
-        return typeDistinctionService.deleteByLibelle(Libelle);
+    @DeleteMapping("/libelle/{libelle}")
+    @Transactional
+    public int deleteByLibelle(@PathVariable String libelle) {
+        return typeDistinctionService.deleteByLibelle(libelle);
     }
 
-    public TypeDistinction save(TypeDistinction typeDistinction) {
+    @PostMapping("/")
+
+    public TypeDistinction save(@RequestBody TypeDistinction typeDistinction) {
         return typeDistinctionService.save(typeDistinction);
     }
 }

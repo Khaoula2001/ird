@@ -1,4 +1,4 @@
-package com.example.ird.service.impl;
+package com.example.ird.process.impl;
 
 import com.example.ird.bean.Campagne;
 import com.example.ird.bean.CampagneChercheurOuverture;
@@ -15,7 +15,6 @@ import java.util.List;
 
 @Service
 public class CampagneSaveProcessImpl  {
-
     public int Exec(Campagne campagne) {
         prepareSave(campagne);
         int resultat = validateSave(campagne);

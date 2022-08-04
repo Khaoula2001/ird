@@ -10,7 +10,7 @@ public class NatureExpertise {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private  String libelle;
+    private String libelle;
     private String code;
 
     public Long getId() {

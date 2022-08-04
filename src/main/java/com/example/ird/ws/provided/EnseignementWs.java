@@ -3,9 +3,9 @@ package com.example.ird.ws.provided;
 import com.example.ird.bean.Enseignement;
 import com.example.ird.service.facade.EnseignementService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.Date;
 import java.util.List;
 
@@ -15,31 +15,44 @@ public class EnseignementWs {
     @Autowired
     private EnseignementService enseignementService;
 
-    public Enseignement findByIntitule(String intitule) {
+    @GetMapping("/intitule/{intitule}")
+
+    public Enseignement findByIntitule(@PathVariable String intitule) {
         return enseignementService.findByIntitule(intitule);
     }
 
-    public Enseignement findByDescription(String description) {
+    @GetMapping("/description/{description}")
+
+    public Enseignement findByDescription(@PathVariable String description) {
         return enseignementService.findByDescription(description);
     }
 
-    public List<Enseignement> findByChercheurEmail(String email) {
+    @GetMapping("/email/{email}")
+
+    public List<Enseignement> findByChercheurEmail(@PathVariable String email) {
         return enseignementService.findByChercheurEmail(email);
     }
 
-    public List<Enseignement> findByCampagneDateDebut(Date dateDebut) {
+    @GetMapping("/dateDebut/{dateDebut}")
+
+    public List<Enseignement> findByCampagneDateDebut(@PathVariable Date dateDebut) {
         return enseignementService.findByCampagneDateDebut(dateDebut);
     }
 
-    public int deleteByIntitule(String intitule) {
+    @DeleteMapping("/intitule/{intitule}")
+    @Transactional
+    public int deleteByIntitule(@PathVariable String intitule) {
         return enseignementService.deleteByIntitule(intitule);
     }
 
-    public int deleteByDescription(String description) {
+    @DeleteMapping("/description/{description}")
+    @Transactional
+    public int deleteByDescription(@PathVariable String description) {
         return enseignementService.deleteByDescription(description);
     }
 
-    public Enseignement save(Enseignement enseignement) {
+    @PostMapping("/")
+    public Enseignement save(@RequestBody Enseignement enseignement) {
         return enseignementService.save(enseignement);
     }
 }

@@ -10,5 +10,8 @@ public interface NatureExpertiseService {
     int deleteByCode(String code);
     NatureExpertise findByCode(String code);
     List<NatureExpertise> findAll();
+
+    int update(String code, NatureExpertise natureExpertise);
+
 }
 

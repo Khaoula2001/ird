@@ -9,5 +9,6 @@ import java.util.List;
 public interface EtatCampagneService {
 
     EtatCampagne findByCode(String code);
+
     int deleteByCode(String code);
 }

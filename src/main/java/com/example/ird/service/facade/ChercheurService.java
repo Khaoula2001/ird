@@ -1,11 +1,13 @@
 package com.example.ird.service.facade;
 
 import com.example.ird.bean.Chercheur;
-
-import javax.transaction.Transactional;
+import org.springframework.stereotype.Service;
 import java.util.List;
+import javax.transaction.Transactional;
 
+@Service
 public interface ChercheurService {
+
     Chercheur findByEmail(String email);
 
     Chercheur findByLogin(String login);
@@ -16,14 +18,13 @@ public interface ChercheurService {
 
     int deleteByLogin(String login);
 
+    Chercheur save(Chercheur chercheur);
+
     @Transactional
     int deleteByPrenom(String prenom);
 
     @Transactional
     int deleteByNom(String nom);
-
-    @Transactional
-    Chercheur save(Chercheur chercheur);
 
     List<Chercheur> findAll();
 }

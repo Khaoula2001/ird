@@ -4,9 +4,9 @@ package com.example.ird.ws.provided;
 import com.example.ird.bean.FormationContinue;
 import com.example.ird.service.facade.FormationContinueService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.Date;
 import java.util.List;
 
@@ -16,31 +16,43 @@ public class FormationContinueWs {
     @Autowired
     private FormationContinueService formationContinueService;
 
-    public FormationContinue findByDureeEstime(double dureeEstime) {
+    @GetMapping("/dureeEstime/{dureeEstime}")
+    public FormationContinue findByDureeEstime(@PathVariable double dureeEstime) {
         return formationContinueService.findByDureeEstime(dureeEstime);
     }
 
-    public FormationContinue findByDescription(String description) {
+    @GetMapping("/description/{description}")
+
+    public FormationContinue findByDescription(@PathVariable String description) {
         return formationContinueService.findByDescription(description);
     }
 
-    public List<FormationContinue> findByChercheurEmail(String email) {
+    @GetMapping("/email/{email}")
+
+    public List<FormationContinue> findByChercheurEmail(@PathVariable String email) {
         return formationContinueService.findByChercheurEmail(email);
     }
 
-    public List<FormationContinue> findByCampagneDateDebut(Date dateDebut) {
+    @GetMapping("/dateDebut/{dateDebut}")
+
+    public List<FormationContinue> findByCampagneDateDebut(@PathVariable Date dateDebut) {
         return formationContinueService.findByCampagneDateDebut(dateDebut);
     }
 
-    public int deleteByDureeEstime(double dureeEstime) {
+    @DeleteMapping("/dureeEstime/{dureeEstime}")
+    @Transactional
+    public int deleteByDureeEstime(@PathVariable double dureeEstime) {
         return formationContinueService.deleteByDureeEstime(dureeEstime);
     }
 
-    public int deleteByDescription(String description) {
+    @DeleteMapping("/description/{description}")
+    @Transactional
+    public int deleteByDescription(@PathVariable String description) {
         return formationContinueService.deleteByDescription(description);
     }
 
-    public FormationContinue save(FormationContinue formationContinue) {
+    @PostMapping("/")
+    public FormationContinue save(@RequestBody FormationContinue formationContinue) {
         return formationContinueService.save(formationContinue);
     }
 }

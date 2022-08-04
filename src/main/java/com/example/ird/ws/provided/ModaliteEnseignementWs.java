@@ -4,8 +4,9 @@ package com.example.ird.ws.provided;
 import com.example.ird.bean.ModaliteEnseignement;
 import com.example.ird.service.facade.ModaliteEnseignementService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.transaction.Transactional;
 
 @RestController
 @RequestMapping("/api/v1/modaliteEnseignement")
@@ -13,23 +14,31 @@ public class ModaliteEnseignementWs {
     @Autowired
     private ModaliteEnseignementService modaliteEnseignementService;
 
-    public ModaliteEnseignement findByCode(String code) {
+    @GetMapping("/code/{code}")
+    public ModaliteEnseignement findByCode(@PathVariable String code) {
         return modaliteEnseignementService.findByCode(code);
     }
 
-    public ModaliteEnseignement findByLibelle(String libelle) {
+    @GetMapping("/libelle/{libelle}")
+
+    public ModaliteEnseignement findByLibelle(@PathVariable String libelle) {
         return modaliteEnseignementService.findByLibelle(libelle);
     }
 
-    public int deleteByCode(String code) {
+    @DeleteMapping("/code/{code}")
+    @Transactional
+    public int deleteByCode(@PathVariable String code) {
         return modaliteEnseignementService.deleteByCode(code);
     }
 
-    public int deleteByLibelle(String Libelle) {
-        return modaliteEnseignementService.deleteByLibelle(Libelle);
+    @DeleteMapping("/libelle/{libelle}")
+    @Transactional
+    public int deleteByLibelle(@PathVariable String libelle) {
+        return modaliteEnseignementService.deleteByLibelle(libelle);
     }
 
-    public ModaliteEnseignement save(ModaliteEnseignement modaliteEnseignement) {
+    @PostMapping("/")
+    public ModaliteEnseignement save(@RequestBody ModaliteEnseignement modaliteEnseignement) {
         return modaliteEnseignementService.save(modaliteEnseignement);
     }
 }

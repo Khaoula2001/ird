@@ -15,6 +15,12 @@ public class NatureExpertiseWs {
         return natureExpertiseService.save(natureexpertise);
     }
 
+    @PutMapping("/update/{code}")
+    public int update(@PathVariable String code, @RequestBody NatureExpertise natureExpertise) {
+        return natureExpertiseService.update(code, natureExpertise);
+    }
+
+
     @GetMapping("/findAll")
     public List<NatureExpertise> findAll() {
         return natureExpertiseService.findAll();
@@ -24,6 +30,7 @@ public class NatureExpertiseWs {
     public NatureExpertise findByCode(@PathVariable String code) {
         return natureExpertiseService.findByCode(code);
     }
+
     @DeleteMapping("/delete/{code}")
     public int deleteByCode(@PathVariable String code) {
         return natureExpertiseService.deleteByCode(code);

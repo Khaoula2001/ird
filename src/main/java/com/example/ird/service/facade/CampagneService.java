@@ -1,12 +1,15 @@
 package com.example.ird.service.facade;
 
 import com.example.ird.bean.Campagne;
-
-import javax.transaction.Transactional;
+import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
+import javax.transaction.Transactional;
 
+@Service
 public interface CampagneService {
+
+
     Campagne save(Campagne campagne);
     Campagne findByEtatCampagneCode(String code);
     List<Campagne> findByDateDebut(Date dateDebut);
@@ -18,4 +21,8 @@ public interface CampagneService {
 
     @Transactional
     int deleteByDateFin(Date dateFin);
+
+    List<Campagne> findByEtatCampagneCode(String code);
+
+    List<Campagne> findAll();
 }

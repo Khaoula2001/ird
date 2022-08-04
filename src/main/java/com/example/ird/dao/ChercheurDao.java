@@ -10,6 +10,7 @@ import java.util.List;
 @Repository
 public interface ChercheurDao extends JpaRepository<Chercheur, Long> {
     Chercheur findByLogin(String login);
+
     Chercheur findByEmail(String email);
 
 
