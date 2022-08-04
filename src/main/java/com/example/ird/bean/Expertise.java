@@ -11,7 +11,7 @@ public class Expertise {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private BigDecimal tempsEstimal;
+    private Long tempsEstimal;
     private Long annee;
     private String libelle;
     @OneToMany(mappedBy = "expertise")
@@ -39,11 +39,11 @@ public class Expertise {
         this.id = id;
     }
 
-    public BigDecimal getTempsEstimal() {
+    public Long getTempsEstimal() {
         return tempsEstimal;
     }
 
-    public void setTempsEstimal(BigDecimal tempsEstimal) {
+    public void setTempsEstimal(Long tempsEstimal) {
         this.tempsEstimal = tempsEstimal;
     }
 

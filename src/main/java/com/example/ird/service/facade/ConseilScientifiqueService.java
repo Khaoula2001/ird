@@ -9,8 +9,14 @@ import java.util.Optional;
 
 public interface ConseilScientifiqueService {
 
-    // beg save
-    int save(ConseilScientifique natureexpertise);
-
     List<ConseilScientifique> findAll();
+
+    int deleteById(Long id);
+
+    ConseilScientifique findById(Long id);
+
+    ConseilScientifique update(ConseilScientifique conseilScientifique);
+
+    //    Search
+    List<ConseilScientifique> findByCriteria(ConseilScientifique conseilScientifique);
 }

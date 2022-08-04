@@ -6,20 +6,18 @@ import com.example.ird.service.facade.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class ExpertiseSaveProcessImpl implements ExpertiseSaveProcess {
     // Method save
     @Override
-    public int save(Expertise expertise) {
+    public Expertise save(Expertise expertise) {
         prepare(expertise);
         int validate = validate(expertise);
         if (validate < 0) {
-            return validate;
+            return null;
         } else {
             handleprocess(expertise);
-            return 1;
+            return expertise;
         }
     }
 
@@ -29,7 +27,7 @@ public class ExpertiseSaveProcessImpl implements ExpertiseSaveProcess {
 //                NatureExpertise natureExpertise = natureExpertiseService.findByCode(conseilScientifique.getNatureExpertise().getCode());
 //                conseilScientifique.setNatureExpertise(natureExpertise);
 //            }
-            Chercheur chercheur = chercheurService.findByLogin(expertise.getChercheur().getLogin());
+            Chercheur chercheur = chercheurService.findByLogin("rr");
             expertise.setChercheur(chercheur);
             Campagne campagne = campagneService.findByEtatCampagneCode("en cours");
             expertise.setCampagne(campagne);

@@ -13,7 +13,7 @@ import java.util.List;
 public class ExpertiseSaveProcessWs {
 
     @PostMapping("/")
-    public int save(@RequestBody Expertise expertise) {
+    public Expertise save(@RequestBody Expertise expertise) {
         return expertiseSaveProcess.save(expertise);
     }
 

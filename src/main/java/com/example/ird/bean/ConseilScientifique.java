@@ -1,5 +1,8 @@
 package com.example.ird.bean;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,6 +15,7 @@ public class ConseilScientifique {
     @ManyToOne
     private NatureExpertise natureExpertise;
     @ManyToOne
+    @JsonIgnore
     private Expertise expertise;
 
 

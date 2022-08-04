@@ -4,5 +4,5 @@ import com.example.ird.bean.Expertise;
 
 public interface ExpertiseSaveProcess {
     // Method save
-    int save(Expertise expertise);
+    Expertise save(Expertise expertise);
 }
